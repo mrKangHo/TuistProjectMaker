@@ -1,0 +1,107 @@
+"step.project_select" = "创建位置";
+"step.project_name" = "项目名称";
+"step.project_settings" = "项目设置";
+"step.environment_check" = "环境检查";
+"step.domain_config" = "Domain 配置";
+"step.data_config" = "Data 配置";
+"step.presentation_config" = "Presentation 配置";
+"step.ui_framework" = "UI 框架";
+"step.presentation_pattern" = "Presentation 模式";
+"step.summary" = "摘要";
+
+"framework.swiftui.desc" = "声明式 UI。可使用 TCA 等最新模式。";
+"framework.uikit.desc" = "命令式 UI。基于 ViewController，与现有项目兼容性好。";
+
+"pattern.mvvm.desc" = "View + ViewModel 组合";
+"pattern.mvvmc.desc" = "View + ViewModel + Coordinator";
+"pattern.tca.desc" = "State + Action + Reducer (swift-composable-architecture)";
+
+"action.previous" = "上一步";
+"action.next" = "下一步";
+"action.generating" = "生成中...";
+"action.generated" = "已生成";
+"action.finish" = "完成";
+
+"project_select.title" = "选择创建位置";
+"project_select.subtitle" = "选择要创建项目的上级文件夹。将在该文件夹内以项目名称创建新文件夹。";
+"project_select.no_folder" = "尚未选择文件夹";
+"project_select.choose_folder" = "选择文件夹...";
+
+"project_name.title" = "项目名称";
+"project_name.subtitle" = "输入要创建的 Tuist 项目名称。";
+"project_name.placeholder" = "例如：MyAwesomeApp";
+"project_name.invalid" = "名称中不能包含 '/'。";
+
+"project_settings.title" = "项目设置";
+"project_settings.subtitle" = "设置组织名称、Bundle ID 和最低部署目标。";
+"project_settings.organization" = "组织名称";
+"project_settings.organization.placeholder" = "例如：LEE";
+"project_settings.bundle_id_prefix" = "Bundle ID 前缀";
+"project_settings.bundle_id_prefix.placeholder" = "例如：com.example";
+"project_settings.resolved_bundle_id" = "最终 Bundle ID";
+"project_settings.deployment_target" = "最低部署目标 (iOS)";
+
+"environment_check.title" = "环境检查";
+"environment_check.subtitle" = "检查是否已安装 tuist CLI。";
+"environment_check.installing" = "安装中...";
+"environment_check.recheck" = "重新检查";
+"environment_check.installed" = "已安装 tuist";
+"environment_check.not_installed" = "未安装 tuist";
+"environment_check.checking" = "检查中...";
+"environment_check.brew_not_found" = "未找到 brew，请先从 https://brew.sh 安装。";
+
+"domain_config.title" = "Domain 配置";
+"domain_config.subtitle" = "业务逻辑层。Entity、UseCase、Repository Interface 将在此层生成。";
+"domain_config.toggle" = "包含 Domain 层";
+"domain_config.entity.placeholder" = "例如：User";
+"domain_config.usecase.placeholder" = "例如：FetchUser";
+"domain_config.repository.title" = "Repository Interface";
+"domain_config.repository.placeholder" = "例如：User";
+
+"data_config.title" = "Data 配置";
+"data_config.subtitle" = "数据访问层。Repository 实现、DTO/Mapper、DataSource 将在此层生成。";
+"data_config.toggle" = "包含 Data 层";
+"data_config.repository_impl.title" = "Repository 实现";
+"data_config.repository_impl.placeholder" = "例如：User";
+"data_config.dto.placeholder" = "例如：User";
+"data_config.datasource.placeholder" = "例如：UserRemote";
+
+"presentation_config.title" = "Presentation 配置";
+"presentation_config.subtitle" = "界面层。若包含此层，下一步将选择 UI 框架和架构模式。";
+"presentation_config.toggle" = "包含 Presentation 层";
+"presentation_config.screen.title" = "界面 (Screen)";
+"presentation_config.screen.placeholder" = "例如：Login";
+
+"element_editor.empty" = "暂无";
+"element_editor.add" = "添加";
+
+"ui_framework.title" = "选择 UI 框架";
+"ui_framework.subtitle" = "选择 Presentation 层使用 SwiftUI 还是 UIKit 构建。";
+
+"presentation_pattern.title" = "选择 Presentation 模式";
+"presentation_pattern.subtitle" = "生成界面 (Screen) 时默认使用的架构模式。之后也可以为每个界面单独更改。";
+
+"summary.title" = "摘要";
+"summary.subtitle" = "按下完成以使用以下内容生成项目。";
+"summary.project_name" = "项目名称";
+"summary.destination" = "创建路径";
+"summary.organization" = "组织名称";
+"summary.deployment_target" = "部署目标";
+"summary.domain_elements" = "Domain 要素";
+"summary.data_elements" = "Data 要素";
+"summary.ui_framework" = "UI 框架";
+"summary.presentation_pattern" = "Presentation 模式";
+"summary.screens" = "界面";
+"summary.generated" = "生成完成，已在 Finder 中显示";
+
+"error.no_destination" = "创建位置或项目名称无效。";
+"error.already_exists" = "该位置已存在文件夹";
+
+"log.create_folder" = "创建文件夹";
+"log.domain" = "生成 Domain 层";
+"log.data" = "生成 Data 层";
+"log.presentation" = "生成 Presentation 层";
+"log.di_container" = "生成 DI 容器（同名元素之间自动完成构造函数注入）";
+"log.manifest" = "编写 Tuist 清单文件";
+"log.done" = "完成";
+"log.no_screens" = "没有任何界面，跳过应用入口点的生成";

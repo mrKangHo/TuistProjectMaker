@@ -1,0 +1,107 @@
+"step.project_select" = "생성 위치";
+"step.project_name" = "프로젝트 이름";
+"step.project_settings" = "프로젝트 설정";
+"step.environment_check" = "환경 체크";
+"step.domain_config" = "Domain 구성";
+"step.data_config" = "Data 구성";
+"step.presentation_config" = "Presentation 구성";
+"step.ui_framework" = "UI 프레임워크";
+"step.presentation_pattern" = "Presentation 패턴";
+"step.summary" = "요약";
+
+"framework.swiftui.desc" = "선언형 UI. TCA 등 최신 패턴 사용 가능.";
+"framework.uikit.desc" = "명령형 UI. ViewController 기반, 기존 프로젝트 호환성 좋음.";
+
+"pattern.mvvm.desc" = "View + ViewModel 세트";
+"pattern.mvvmc.desc" = "View + ViewModel + Coordinator";
+"pattern.tca.desc" = "State + Action + Reducer (swift-composable-architecture)";
+
+"action.previous" = "이전";
+"action.next" = "다음";
+"action.generating" = "생성 중...";
+"action.generated" = "생성 완료";
+"action.finish" = "완료";
+
+"project_select.title" = "생성 위치 선택";
+"project_select.subtitle" = "프로젝트를 생성할 상위 폴더를 선택하세요. 이 폴더 안에 프로젝트 이름으로 새 폴더가 만들어집니다.";
+"project_select.no_folder" = "선택된 폴더 없음";
+"project_select.choose_folder" = "폴더 선택...";
+
+"project_name.title" = "프로젝트 이름";
+"project_name.subtitle" = "생성할 Tuist 프로젝트의 이름을 입력하세요.";
+"project_name.placeholder" = "예: MyAwesomeApp";
+"project_name.invalid" = "이름에 '/' 는 사용할 수 없습니다.";
+
+"project_settings.title" = "프로젝트 설정";
+"project_settings.subtitle" = "조직 이름, Bundle ID, 최소 배포 타깃을 설정하세요.";
+"project_settings.organization" = "조직 이름";
+"project_settings.organization.placeholder" = "예: LEE";
+"project_settings.bundle_id_prefix" = "Bundle ID 프리픽스";
+"project_settings.bundle_id_prefix.placeholder" = "예: com.example";
+"project_settings.resolved_bundle_id" = "최종 Bundle ID";
+"project_settings.deployment_target" = "최소 배포 타깃 (iOS)";
+
+"environment_check.title" = "환경 체크";
+"environment_check.subtitle" = "tuist CLI 설치 여부를 확인합니다.";
+"environment_check.installing" = "설치 중...";
+"environment_check.recheck" = "다시 확인";
+"environment_check.installed" = "tuist 설치됨";
+"environment_check.not_installed" = "tuist 미설치";
+"environment_check.checking" = "확인 중...";
+"environment_check.brew_not_found" = "brew를 찾을 수 없음. https://brew.sh 에서 먼저 설치 필요.";
+
+"domain_config.title" = "Domain 구성";
+"domain_config.subtitle" = "비즈니스 로직 레이어. Entity, UseCase, Repository Interface가 이 레이어에 생성됩니다.";
+"domain_config.toggle" = "Domain 레이어 포함";
+"domain_config.entity.placeholder" = "예: User";
+"domain_config.usecase.placeholder" = "예: FetchUser";
+"domain_config.repository.title" = "Repository Interface";
+"domain_config.repository.placeholder" = "예: User";
+
+"data_config.title" = "Data 구성";
+"data_config.subtitle" = "데이터 접근 레이어. Repository 구현체, DTO/Mapper, DataSource가 이 레이어에 생성됩니다.";
+"data_config.toggle" = "Data 레이어 포함";
+"data_config.repository_impl.title" = "Repository 구현체";
+"data_config.repository_impl.placeholder" = "예: User";
+"data_config.dto.placeholder" = "예: User";
+"data_config.datasource.placeholder" = "예: UserRemote";
+
+"presentation_config.title" = "Presentation 구성";
+"presentation_config.subtitle" = "화면 레이어. 이 레이어를 포함하면 다음 단계에서 UI 프레임워크와 아키텍처 패턴을 선택합니다.";
+"presentation_config.toggle" = "Presentation 레이어 포함";
+"presentation_config.screen.title" = "화면 (Screen)";
+"presentation_config.screen.placeholder" = "예: Login";
+
+"element_editor.empty" = "아직 없음";
+"element_editor.add" = "추가";
+
+"ui_framework.title" = "UI 프레임워크 선택";
+"ui_framework.subtitle" = "Presentation 레이어를 SwiftUI로 만들지 UIKit으로 만들지 선택하세요.";
+
+"presentation_pattern.title" = "Presentation 패턴 선택";
+"presentation_pattern.subtitle" = "화면(Screen) 생성 시 기본으로 사용할 아키텍처 패턴입니다. 화면마다 나중에 개별로 바꿀 수도 있습니다.";
+
+"summary.title" = "요약";
+"summary.subtitle" = "아래 내용으로 생성하려면 완료를 누르세요.";
+"summary.project_name" = "프로젝트 이름";
+"summary.destination" = "생성 경로";
+"summary.organization" = "조직 이름";
+"summary.deployment_target" = "배포 타깃";
+"summary.domain_elements" = "Domain 요소";
+"summary.data_elements" = "Data 요소";
+"summary.ui_framework" = "UI 프레임워크";
+"summary.presentation_pattern" = "Presentation 패턴";
+"summary.screens" = "화면";
+"summary.generated" = "생성 완료, Finder에서 열림";
+
+"error.no_destination" = "생성 위치 또는 프로젝트 이름이 올바르지 않습니다.";
+"error.already_exists" = "이미 존재하는 폴더입니다";
+
+"log.create_folder" = "폴더 생성";
+"log.domain" = "Domain 레이어 생성";
+"log.data" = "Data 레이어 생성";
+"log.presentation" = "Presentation 레이어 생성";
+"log.di_container" = "DI 컨테이너 생성 (이름이 같은 요소끼리 자동으로 생성자 주입 연결됨)";
+"log.manifest" = "Tuist 매니페스트 작성";
+"log.done" = "완료";
+"log.no_screens" = "화면이 하나도 없어 앱 진입점은 생성하지 않음";

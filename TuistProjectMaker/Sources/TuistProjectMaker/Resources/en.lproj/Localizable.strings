@@ -1,0 +1,107 @@
+"step.project_select" = "Location";
+"step.project_name" = "Project Name";
+"step.project_settings" = "Project Settings";
+"step.environment_check" = "Environment Check";
+"step.domain_config" = "Domain Setup";
+"step.data_config" = "Data Setup";
+"step.presentation_config" = "Presentation Setup";
+"step.ui_framework" = "UI Framework";
+"step.presentation_pattern" = "Presentation Pattern";
+"step.summary" = "Summary";
+
+"framework.swiftui.desc" = "Declarative UI. Enables modern patterns like TCA.";
+"framework.uikit.desc" = "Imperative UI. ViewController-based, good compatibility with existing projects.";
+
+"pattern.mvvm.desc" = "View + ViewModel pair";
+"pattern.mvvmc.desc" = "View + ViewModel + Coordinator";
+"pattern.tca.desc" = "State + Action + Reducer (swift-composable-architecture)";
+
+"action.previous" = "Previous";
+"action.next" = "Next";
+"action.generating" = "Generating...";
+"action.generated" = "Generated";
+"action.finish" = "Finish";
+
+"project_select.title" = "Choose a Location";
+"project_select.subtitle" = "Select the parent folder where the project will be created. A new folder named after the project will be created inside it.";
+"project_select.no_folder" = "No folder selected";
+"project_select.choose_folder" = "Choose Folder...";
+
+"project_name.title" = "Project Name";
+"project_name.subtitle" = "Enter the name of the Tuist project to create.";
+"project_name.placeholder" = "e.g. MyAwesomeApp";
+"project_name.invalid" = "Name cannot contain '/'.";
+
+"project_settings.title" = "Project Settings";
+"project_settings.subtitle" = "Set the organization name, Bundle ID, and minimum deployment target.";
+"project_settings.organization" = "Organization Name";
+"project_settings.organization.placeholder" = "e.g. LEE";
+"project_settings.bundle_id_prefix" = "Bundle ID Prefix";
+"project_settings.bundle_id_prefix.placeholder" = "e.g. com.example";
+"project_settings.resolved_bundle_id" = "Final Bundle ID";
+"project_settings.deployment_target" = "Minimum Deployment Target (iOS)";
+
+"environment_check.title" = "Environment Check";
+"environment_check.subtitle" = "Checks whether the tuist CLI is installed.";
+"environment_check.installing" = "Installing...";
+"environment_check.recheck" = "Recheck";
+"environment_check.installed" = "tuist installed";
+"environment_check.not_installed" = "tuist not installed";
+"environment_check.checking" = "Checking...";
+"environment_check.brew_not_found" = "Could not find brew. Please install it from https://brew.sh first.";
+
+"domain_config.title" = "Domain Setup";
+"domain_config.subtitle" = "Business logic layer. Entities, UseCases, and Repository interfaces are generated here.";
+"domain_config.toggle" = "Include Domain layer";
+"domain_config.entity.placeholder" = "e.g. User";
+"domain_config.usecase.placeholder" = "e.g. FetchUser";
+"domain_config.repository.title" = "Repository Interface";
+"domain_config.repository.placeholder" = "e.g. User";
+
+"data_config.title" = "Data Setup";
+"data_config.subtitle" = "Data access layer. Repository implementations, DTOs/Mappers, and DataSources are generated here.";
+"data_config.toggle" = "Include Data layer";
+"data_config.repository_impl.title" = "Repository Impl";
+"data_config.repository_impl.placeholder" = "e.g. User";
+"data_config.dto.placeholder" = "e.g. User";
+"data_config.datasource.placeholder" = "e.g. UserRemote";
+
+"presentation_config.title" = "Presentation Setup";
+"presentation_config.subtitle" = "Screen layer. If included, you'll choose a UI framework and architecture pattern in the next steps.";
+"presentation_config.toggle" = "Include Presentation layer";
+"presentation_config.screen.title" = "Screen";
+"presentation_config.screen.placeholder" = "e.g. Login";
+
+"element_editor.empty" = "None yet";
+"element_editor.add" = "Add";
+
+"ui_framework.title" = "Choose UI Framework";
+"ui_framework.subtitle" = "Choose whether the Presentation layer is built with SwiftUI or UIKit.";
+
+"presentation_pattern.title" = "Choose Presentation Pattern";
+"presentation_pattern.subtitle" = "The default architecture pattern used when generating screens. Can be changed per screen later.";
+
+"summary.title" = "Summary";
+"summary.subtitle" = "Press Finish to generate the project with the settings below.";
+"summary.project_name" = "Project Name";
+"summary.destination" = "Destination";
+"summary.organization" = "Organization";
+"summary.deployment_target" = "Deployment Target";
+"summary.domain_elements" = "Domain Elements";
+"summary.data_elements" = "Data Elements";
+"summary.ui_framework" = "UI Framework";
+"summary.presentation_pattern" = "Presentation Pattern";
+"summary.screens" = "Screens";
+"summary.generated" = "Generated. Revealed in Finder.";
+
+"error.no_destination" = "The destination folder or project name is invalid.";
+"error.already_exists" = "A folder already exists at this location";
+
+"log.create_folder" = "Creating folder";
+"log.domain" = "Generating Domain layer";
+"log.data" = "Generating Data layer";
+"log.presentation" = "Generating Presentation layer";
+"log.di_container" = "Generating DI container (matching-name elements are wired automatically)";
+"log.manifest" = "Writing Tuist manifests";
+"log.done" = "Done";
+"log.no_screens" = "No screens defined, skipping app entry point";

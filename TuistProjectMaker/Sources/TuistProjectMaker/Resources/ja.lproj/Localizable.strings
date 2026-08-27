@@ -1,0 +1,107 @@
+"step.project_select" = "作成場所";
+"step.project_name" = "プロジェクト名";
+"step.project_settings" = "プロジェクト設定";
+"step.environment_check" = "環境チェック";
+"step.domain_config" = "Domain 構成";
+"step.data_config" = "Data 構成";
+"step.presentation_config" = "Presentation 構成";
+"step.ui_framework" = "UI フレームワーク";
+"step.presentation_pattern" = "Presentation パターン";
+"step.summary" = "確認";
+
+"framework.swiftui.desc" = "宣言型 UI。TCA など最新パターンが使用可能。";
+"framework.uikit.desc" = "命令型 UI。ViewController ベースで、既存プロジェクトとの互換性が高い。";
+
+"pattern.mvvm.desc" = "View + ViewModel の組み合わせ";
+"pattern.mvvmc.desc" = "View + ViewModel + Coordinator";
+"pattern.tca.desc" = "State + Action + Reducer (swift-composable-architecture)";
+
+"action.previous" = "戻る";
+"action.next" = "次へ";
+"action.generating" = "生成中...";
+"action.generated" = "生成完了";
+"action.finish" = "完了";
+
+"project_select.title" = "作成場所を選択";
+"project_select.subtitle" = "プロジェクトを作成する親フォルダを選択してください。このフォルダ内にプロジェクト名の新しいフォルダが作成されます。";
+"project_select.no_folder" = "フォルダが選択されていません";
+"project_select.choose_folder" = "フォルダを選択...";
+
+"project_name.title" = "プロジェクト名";
+"project_name.subtitle" = "作成する Tuist プロジェクトの名前を入力してください。";
+"project_name.placeholder" = "例: MyAwesomeApp";
+"project_name.invalid" = "名前に '/' は使用できません。";
+
+"project_settings.title" = "プロジェクト設定";
+"project_settings.subtitle" = "組織名、Bundle ID、最小デプロイターゲットを設定してください。";
+"project_settings.organization" = "組織名";
+"project_settings.organization.placeholder" = "例: LEE";
+"project_settings.bundle_id_prefix" = "Bundle ID プレフィックス";
+"project_settings.bundle_id_prefix.placeholder" = "例: com.example";
+"project_settings.resolved_bundle_id" = "最終 Bundle ID";
+"project_settings.deployment_target" = "最小デプロイターゲット (iOS)";
+
+"environment_check.title" = "環境チェック";
+"environment_check.subtitle" = "tuist CLI がインストールされているか確認します。";
+"environment_check.installing" = "インストール中...";
+"environment_check.recheck" = "再確認";
+"environment_check.installed" = "tuist インストール済み";
+"environment_check.not_installed" = "tuist 未インストール";
+"environment_check.checking" = "確認中...";
+"environment_check.brew_not_found" = "brew が見つかりません。先に https://brew.sh からインストールしてください。";
+
+"domain_config.title" = "Domain 構成";
+"domain_config.subtitle" = "ビジネスロジック層。Entity、UseCase、Repository Interface がこの層に生成されます。";
+"domain_config.toggle" = "Domain 層を含める";
+"domain_config.entity.placeholder" = "例: User";
+"domain_config.usecase.placeholder" = "例: FetchUser";
+"domain_config.repository.title" = "Repository Interface";
+"domain_config.repository.placeholder" = "例: User";
+
+"data_config.title" = "Data 構成";
+"data_config.subtitle" = "データアクセス層。Repository 実装、DTO/Mapper、DataSource がこの層に生成されます。";
+"data_config.toggle" = "Data 層を含める";
+"data_config.repository_impl.title" = "Repository 実装";
+"data_config.repository_impl.placeholder" = "例: User";
+"data_config.dto.placeholder" = "例: User";
+"data_config.datasource.placeholder" = "例: UserRemote";
+
+"presentation_config.title" = "Presentation 構成";
+"presentation_config.subtitle" = "画面層。この層を含めると、次のステップで UI フレームワークとアーキテクチャパターンを選択します。";
+"presentation_config.toggle" = "Presentation 層を含める";
+"presentation_config.screen.title" = "画面 (Screen)";
+"presentation_config.screen.placeholder" = "例: Login";
+
+"element_editor.empty" = "まだありません";
+"element_editor.add" = "追加";
+
+"ui_framework.title" = "UI フレームワークを選択";
+"ui_framework.subtitle" = "Presentation 層を SwiftUI で作るか UIKit で作るか選択してください。";
+
+"presentation_pattern.title" = "Presentation パターンを選択";
+"presentation_pattern.subtitle" = "画面 (Screen) 生成時にデフォルトで使用するアーキテクチャパターンです。画面ごとに後で個別に変更することもできます。";
+
+"summary.title" = "確認";
+"summary.subtitle" = "下記の内容で作成するには完了を押してください。";
+"summary.project_name" = "プロジェクト名";
+"summary.destination" = "作成先パス";
+"summary.organization" = "組織名";
+"summary.deployment_target" = "デプロイターゲット";
+"summary.domain_elements" = "Domain 要素";
+"summary.data_elements" = "Data 要素";
+"summary.ui_framework" = "UI フレームワーク";
+"summary.presentation_pattern" = "Presentation パターン";
+"summary.screens" = "画面";
+"summary.generated" = "生成完了、Finder で表示しました";
+
+"error.no_destination" = "作成場所またはプロジェクト名が正しくありません。";
+"error.already_exists" = "すでに存在するフォルダです";
+
+"log.create_folder" = "フォルダを作成";
+"log.domain" = "Domain 層を生成";
+"log.data" = "Data 層を生成";
+"log.presentation" = "Presentation 層を生成";
+"log.di_container" = "DI コンテナを生成 (同名の要素同士が自動でコンストラクタ注入されます)";
+"log.manifest" = "Tuist マニフェストを作成";
+"log.done" = "完了";
+"log.no_screens" = "画面が一つもないため、アプリのエントリーポイントは生成しません";
