@@ -2,11 +2,13 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-swift build -c debug
+CONFIG="${1:-debug}"
+
+swift build -c "${CONFIG}"
 
 APP_NAME="TuistProjectMaker"
 BIN_NAME="TuistProjectMaker"
-BUILD_BIN=".build/debug/${BIN_NAME}"
+BUILD_BIN=".build/${CONFIG}/${BIN_NAME}"
 APP_BUNDLE=".build/${APP_NAME}.app"
 
 rm -rf "${APP_BUNDLE}"
@@ -16,7 +18,7 @@ cp "${BUILD_BIN}" "${APP_BUNDLE}/Contents/MacOS/${BIN_NAME}"
 cp Info.plist "${APP_BUNDLE}/Contents/Info.plist"
 cp Resources/AppIcon.icns "${APP_BUNDLE}/Contents/Resources/AppIcon.icns"
 
-for bundle in .build/debug/*.bundle; do
+for bundle in ".build/${CONFIG}"/*.bundle; do
   [ -d "$bundle" ] && cp -R "$bundle" "${APP_BUNDLE}/Contents/Resources/"
 done
 
