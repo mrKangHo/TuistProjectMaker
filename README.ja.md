@@ -28,7 +28,7 @@ Tuist ベースの iOS プロジェクトを Clean Architecture 構成でスキ�
 ## インストール
 
 ```sh
-brew tap mrkangho/tuistprojectmaker
+brew tap mrkangho/tuistprojectmaker https://github.com/mrKangHo/TuistProjectMaker
 brew install --cask tuistprojectmaker
 ```
 

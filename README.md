@@ -28,7 +28,7 @@ The app UI is localized into English, Korean, Japanese, and Simplified Chinese, 
 ## Install
 
 ```sh
-brew tap mrkangho/tuistprojectmaker
+brew tap mrkangho/tuistprojectmaker https://github.com/mrKangHo/TuistProjectMaker
 brew install --cask tuistprojectmaker
 ```
 

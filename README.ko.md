@@ -28,7 +28,7 @@ Tuist 기반 iOS 프로젝트를 Clean Architecture 구조로 구성해주는 ma
 ## 설치
 
 ```sh
-brew tap mrkangho/tuistprojectmaker
+brew tap mrkangho/tuistprojectmaker https://github.com/mrKangHo/TuistProjectMaker
 brew install --cask tuistprojectmaker
 ```
 

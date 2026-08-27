@@ -28,7 +28,7 @@
 ## 安装
 
 ```sh
-brew tap mrkangho/tuistprojectmaker
+brew tap mrkangho/tuistprojectmaker https://github.com/mrKangHo/TuistProjectMaker
 brew install --cask tuistprojectmaker
 ```
 
