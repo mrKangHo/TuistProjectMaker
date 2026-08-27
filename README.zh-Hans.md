@@ -25,7 +25,16 @@
 
 应用界面支持英语、韩语、日语、简体中文，跟随系统语言自动切换。
 
-## 运行
+## 安装
+
+```sh
+brew tap mrkangho/tuistprojectmaker
+brew install --cask tuistprojectmaker
+```
+
+该应用未经代码签名或公证。Cask 会在安装时自动移除 quarantine 属性，因此打开时不会出现 Gatekeeper 警告。
+
+## 开发
 
 ```sh
 cd TuistProjectMaker

@@ -25,7 +25,16 @@ Elements with matching names across layers (e.g. a `User` DataSource and a `User
 
 The app UI is localized into English, Korean, Japanese, and Simplified Chinese, following the system language.
 
-## Running
+## Install
+
+```sh
+brew tap mrkangho/tuistprojectmaker
+brew install --cask tuistprojectmaker
+```
+
+The app is not code-signed or notarized. The cask removes the quarantine attribute on install so it opens without a Gatekeeper warning.
+
+## Development
 
 ```sh
 cd TuistProjectMaker

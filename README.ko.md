@@ -25,7 +25,16 @@ Tuist 기반 iOS 프로젝트를 Clean Architecture 구조로 구성해주는 ma
 
 앱 UI는 영어/한국어/일본어/중국어(간체)를 지원하며 시스템 언어를 따라간다.
 
-## 실행
+## 설치
+
+```sh
+brew tap mrkangho/tuistprojectmaker
+brew install --cask tuistprojectmaker
+```
+
+미서명/미공증 앱이라 설치 시 Cask가 quarantine 속성을 자동으로 제거해서 Gatekeeper 경고 없이 실행된다.
+
+## 개발
 
 ```sh
 cd TuistProjectMaker

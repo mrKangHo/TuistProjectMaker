@@ -25,7 +25,16 @@ Tuist ベースの iOS プロジェクトを Clean Architecture 構成でスキ�
 
 アプリの UI は英語・韓国語・日本語・簡体字中国語に対応しており、システム言語に従う。
 
-## 実行
+## インストール
+
+```sh
+brew tap mrkangho/tuistprojectmaker
+brew install --cask tuistprojectmaker
+```
+
+このアプリはコード署名・公証されていない。Cask がインストール時に quarantine 属性を自動で削除するため、Gatekeeper の警告なしで起動できる。
+
+## 開発
 
 ```sh
 cd TuistProjectMaker
