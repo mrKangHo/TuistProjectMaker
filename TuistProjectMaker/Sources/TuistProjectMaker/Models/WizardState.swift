@@ -77,6 +77,7 @@ enum PresentationPattern: String, CaseIterable, Identifiable {
 @MainActor
 final class WizardState: ObservableObject {
     @Published var currentStep: WizardStep = .projectSelect
+    @Published var isMovingForward: Bool = true
 
     @Published var projectPath: URL?
     @Published var projectName: String = ""
@@ -173,11 +174,13 @@ final class WizardState: ObservableObject {
 
     func goNext() {
         guard let next = WizardStep(rawValue: currentStep.rawValue + 1) else { return }
+        isMovingForward = true
         currentStep = next
     }
 
     func goBack() {
         guard let prev = WizardStep(rawValue: currentStep.rawValue - 1) else { return }
+        isMovingForward = false
         currentStep = prev
     }
 

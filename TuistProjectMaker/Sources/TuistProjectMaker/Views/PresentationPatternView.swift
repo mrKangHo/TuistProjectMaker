@@ -29,13 +29,13 @@ struct PresentationPatternView: View {
                         .padding(12)
                         .contentShape(Rectangle())
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.selectableRow)
                     if pattern != available.last {
                         Divider()
                     }
                 }
             }
-            .background(.quaternary.opacity(0.3))
+            .background(.regularMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
             Spacer()

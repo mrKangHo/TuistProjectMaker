@@ -38,7 +38,7 @@ struct ProjectSettingsView: View {
                 }
             }
             .padding(12)
-            .background(.quaternary.opacity(0.3))
+            .background(.regularMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
             Spacer()

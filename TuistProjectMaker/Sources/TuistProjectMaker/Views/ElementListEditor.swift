@@ -38,11 +38,12 @@ struct ElementListEditor: View {
                     .textFieldStyle(.roundedBorder)
                     .onSubmit(add)
                 Button(L("element_editor.add"), action: add)
+                    .buttonStyle(.pressable)
                     .disabled(newName.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
         .padding(12)
-        .background(.quaternary.opacity(0.3))
+        .background(.regularMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .disabled(disabled)
         .opacity(disabled ? 0.4 : 1)

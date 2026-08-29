@@ -26,9 +26,10 @@ struct ProjectSelectView: View {
                         state.projectPath = panel.url
                     }
                 }
+                .buttonStyle(.pressable)
             }
             .padding(12)
-            .background(.quaternary.opacity(0.3))
+            .background(.regularMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
             Spacer()

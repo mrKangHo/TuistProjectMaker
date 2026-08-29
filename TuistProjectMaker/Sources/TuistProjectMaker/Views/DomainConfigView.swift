@@ -13,7 +13,7 @@ struct DomainConfigView: View {
 
                 Toggle(L("domain_config.toggle"), isOn: $state.includeDomain)
                     .padding(12)
-                    .background(.quaternary.opacity(0.3))
+                    .background(.regularMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
 
                 ElementListEditor(

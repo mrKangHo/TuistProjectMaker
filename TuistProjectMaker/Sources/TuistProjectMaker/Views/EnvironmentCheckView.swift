@@ -18,13 +18,15 @@ struct EnvironmentCheckView: View {
                     Button(state.isInstalling ? L("environment_check.installing") : "brew install tuist") {
                         installTuist()
                     }
+                    .buttonStyle(.pressable)
                     .disabled(state.isInstalling)
                 }
                 Button(L("environment_check.recheck")) { checkTuist() }
+                    .buttonStyle(.pressable)
                     .disabled(state.isInstalling)
             }
             .padding(12)
-            .background(.quaternary.opacity(0.3))
+            .background(.regularMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
             if !state.installLog.isEmpty {

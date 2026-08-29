@@ -28,13 +28,13 @@ struct UIFrameworkView: View {
                         .padding(12)
                         .contentShape(Rectangle())
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.selectableRow)
                     if framework != UIFramework.allCases.last {
                         Divider()
                     }
                 }
             }
-            .background(.quaternary.opacity(0.3))
+            .background(.regularMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
             Spacer()

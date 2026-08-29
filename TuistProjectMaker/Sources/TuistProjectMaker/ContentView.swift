@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var state: WizardState
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         NavigationSplitView {
@@ -16,24 +17,50 @@ struct ContentView: View {
             .navigationTitle("TuistProjectMaker")
         } detail: {
             VStack(spacing: 0) {
-                stepContent
+                ZStack {
+                    stepContent
+                        .id(state.currentStep)
+                        .transition(stepTransition)
+                }
+                .clipped()
                 Divider()
                 HStack {
-                    Button(L("action.previous")) { state.goBack() }
+                    Button(L("action.previous")) { advance(state.goBack) }
+                        .buttonStyle(.pressable)
                         .disabled(state.currentStep == .projectSelect || state.isGenerating)
                     Spacer()
                     Button(completionLabel) {
                         if state.currentStep == .summary {
                             state.generateAndReveal()
                         } else {
-                            state.goNext()
+                            advance(state.goNext)
                         }
                     }
+                    .buttonStyle(.pressable)
                     .keyboardShortcut(.defaultAction)
                     .disabled(state.currentStep == .summary ? completionDisabled : !state.canAdvance)
                 }
                 .padding(16)
+                .background(.bar)
             }
+        }
+    }
+
+    /// Enter/exit share the same axis as the navigation direction, so a step that
+    /// slides in from the right slides back out to the right — never a mismatched path.
+    private var stepTransition: AnyTransition {
+        guard !reduceMotion else { return .opacity }
+        let edge: Edge = state.isMovingForward ? .trailing : .leading
+        let oppositeEdge: Edge = state.isMovingForward ? .leading : .trailing
+        return .asymmetric(
+            insertion: .move(edge: edge).combined(with: .opacity),
+            removal: .move(edge: oppositeEdge).combined(with: .opacity)
+        )
+    }
+
+    private func advance(_ action: () -> Void) {
+        withAnimation(reduceMotion ? .easeInOut(duration: 0.15) : .appleDefault) {
+            action()
         }
     }
 
