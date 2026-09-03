@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg-tuist" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg-tuist)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 28 L100 46 L64 64 L28 46 Z"/>
+    <path d="M28 62 L64 80 L100 62"/>
+    <path d="M28 78 L64 96 L100 78"/>
+  </g>
+  <path d="M88 32 C 92 24, 102 24, 102 32 C 96 38, 92 42, 88 32 Z" fill="#F05138"/>
+</svg>
