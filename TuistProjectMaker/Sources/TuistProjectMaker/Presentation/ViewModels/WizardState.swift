@@ -2,78 +2,6 @@ import Foundation
 import SwiftUI
 import AppKit
 
-struct NamedElement: Identifiable, Hashable {
-    let id = UUID()
-    var name: String
-}
-
-enum WizardStep: Int, CaseIterable, Identifiable {
-    case projectSelect
-    case projectName
-    case projectSettings
-    case environmentCheck
-    case domainConfig
-    case dataConfig
-    case presentationConfig
-    case uiFramework
-    case presentationPattern
-    case summary
-
-    var id: Int { rawValue }
-
-    var title: String {
-        switch self {
-        case .projectSelect: return L("step.project_select")
-        case .projectName: return L("step.project_name")
-        case .projectSettings: return L("step.project_settings")
-        case .environmentCheck: return L("step.environment_check")
-        case .domainConfig: return L("step.domain_config")
-        case .dataConfig: return L("step.data_config")
-        case .presentationConfig: return L("step.presentation_config")
-        case .uiFramework: return L("step.ui_framework")
-        case .presentationPattern: return L("step.presentation_pattern")
-        case .summary: return L("step.summary")
-        }
-    }
-}
-
-enum UIFramework: String, CaseIterable, Identifiable {
-    case swiftUI = "SwiftUI"
-    case uikit = "UIKit"
-
-    var id: String { rawValue }
-
-    var description: String {
-        switch self {
-        case .swiftUI: return L("framework.swiftui.desc")
-        case .uikit: return L("framework.uikit.desc")
-        }
-    }
-}
-
-enum PresentationPattern: String, CaseIterable, Identifiable {
-    case mvvm = "MVVM"
-    case mvvmC = "MVVM-C"
-    case tca = "TCA"
-
-    var id: String { rawValue }
-
-    var description: String {
-        switch self {
-        case .mvvm: return L("pattern.mvvm.desc")
-        case .mvvmC: return L("pattern.mvvmc.desc")
-        case .tca: return L("pattern.tca.desc")
-        }
-    }
-
-    static func available(for framework: UIFramework) -> [PresentationPattern] {
-        switch framework {
-        case .swiftUI: return [.mvvm, .mvvmC, .tca]
-        case .uikit: return [.mvvm, .mvvmC]
-        }
-    }
-}
-
 @MainActor
 final class WizardState: ObservableObject {
     @Published var currentStep: WizardStep = .projectSelect
@@ -90,6 +18,17 @@ final class WizardState: ObservableObject {
     @Published var generationLog: String = ""
     @Published var generatedProjectURL: URL?
     @Published var generationError: String?
+
+    private let checkEnvironmentUseCase: CheckEnvironmentUseCaseProtocol
+    private let generateProjectUseCase: GenerateProjectUseCaseProtocol
+
+    init(
+        checkEnvironmentUseCase: CheckEnvironmentUseCaseProtocol? = nil,
+        generateProjectUseCase: GenerateProjectUseCaseProtocol? = nil
+    ) {
+        self.checkEnvironmentUseCase = checkEnvironmentUseCase ?? AppDIContainer.shared.checkEnvironmentUseCase
+        self.generateProjectUseCase = generateProjectUseCase ?? AppDIContainer.shared.generateProjectUseCase
+    }
 
     var trimmedProjectName: String {
         projectName.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -184,12 +123,27 @@ final class WizardState: ObservableObject {
         currentStep = prev
     }
 
+    func checkEnvironment() {
+        isTuistInstalled = checkEnvironmentUseCase.isTuistInstalled()
+    }
+
+    func installTuist() {
+        isInstalling = true
+        installLog = ""
+        checkEnvironmentUseCase.installTuist(progress: { [weak self] output in
+            self?.installLog += output
+        }, completion: { [weak self] success in
+            self?.isInstalling = false
+            self?.isTuistInstalled = success
+        })
+    }
+
     func generateAndReveal() {
         isGenerating = true
         generationError = nil
         generationLog = ""
         do {
-            let url = try ProjectGenerator.generate(self) { [weak self] line in
+            let url = try generateProjectUseCase.execute(state: self) { [weak self] line in
                 self?.generationLog += line + "\n"
             }
             generatedProjectURL = url
