@@ -7,14 +7,14 @@
 <h1 align="center">TuistProjectMaker</h1>
 
 <p align="center">
-  TuistベースのClean Architecture iOSプロジェクトをGUIで自動生成するmacOSウィザードツールです。
+  基于 Tuist 与清晰架构（Clean Architecture）脚手架生成 iOS 项目的 macOS 原生图形向导工具。
 </p>
 
 <p align="center">
   <img src="docs/screenshot.png" alt="TuistProjectMaker Screenshot" width="800" />
 </p>
 
-## インストール
+## 安装指南
 
 ### Homebrew
 ```bash
