@@ -1,50 +1,49 @@
-# TuistProjectMaker
+🇰🇷 [한국어](README.md) | 🇺🇸 [English](README.en.md) | 🇯🇵 [日本語](README.ja.md) | 🇨🇳 [中文](README.zh.md)
 
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-Hans.md)
+<p align="center">
+  <img src="docs/icon.svg" width="128" alt="TuistProjectMaker icon" />
+</p>
 
-A macOS GUI tool that scaffolds Tuist-based iOS projects in a Clean Architecture layout.
+<h1 align="center">TuistProjectMaker</h1>
 
-## Structure
+<p align="center">
+  Tuist 기반 iOS 프로젝트를 Clean Architecture 구조로 자동 구성해주는 macOS GUI 마법사 도구입니다.
+</p>
 
-`TuistProjectMaker/` — a macOS app built with SwiftUI (Swift Package).
+<p align="center">
+  <img src="docs/screenshot.png" alt="TuistProjectMaker Screenshot" width="800" />
+</p>
 
-A step-by-step wizard walks through project creation:
+## 주요 기능
 
-1. Choose a destination folder
-2. Enter the project name
-3. Project settings (organization name, Bundle ID prefix, minimum iOS deployment target)
-4. Environment check (`tuist` CLI installed or not, with one-click install)
-5. Domain layer setup (Entity / UseCase / Repository Interface, add/remove by name)
-6. Data layer setup (Repository Impl / DTO / DataSource, add/remove by name)
-7. Presentation layer setup (Screens, add/remove by name)
-8. UI framework choice (SwiftUI / UIKit)
-9. Presentation pattern choice (MVVM / MVVM-C / TCA — TCA is SwiftUI-only)
-10. Summary — press Finish to generate the project and reveal it in Finder
+- **단계별 프로젝트 생성 마법사**:
+  1. 프로젝트 생성 위치 선택
+  2. 프로젝트 이름 및 Bundle Identifier 설정
+  3. 최소 iOS 배포 타깃 및 Tuist CLI 환경 자동 점검
+  4. Domain 계층 구성 (Entity / UseCase / Repository 인터페이스)
+  5. Data 계층 구성 (Repository 구현체 / DTO / DataSource)
+  6. Presentation 계층 구성 및 UI 프레임워크(SwiftUI / UIKit) 선택
+  7. 아키텍처 패턴 선택 (MVVM / MVVM-C / TCA)
+  8. 레이어 간 생성자 주입 및 `DIContainer` 자동 조립 및 Finder 열기
+- 다국어 인터페이스 지원 (한국어, 영어, 일본어, 중국어 간체)
 
-Elements with matching names across layers (e.g. a `User` DataSource and a `User` RepositoryImpl) are wired together automatically via constructor injection, composed in a generated `DIContainer`.
+## 설치 (Installation)
 
-The app UI is localized into English, Korean, Japanese, and Simplified Chinese, following the system language.
+### Homebrew
+```bash
+brew tap mrKangHo/tap
+brew install tuistprojectmaker
+```
 
-## Install
-
-```sh
+또는 전용 Cask 직접 설치:
+```bash
 brew tap mrkangho/tuistprojectmaker https://github.com/mrKangHo/TuistProjectMaker
 brew install --cask tuistprojectmaker
 ```
 
-The app is not code-signed or notarized. The cask removes the quarantine attribute on install so it opens without a Gatekeeper warning.
+## 직접 빌드 및 실행
 
-## Development
-
-```sh
+```bash
 cd TuistProjectMaker
 swift run
-```
-
-To package as a double-clickable `.app` bundle:
-
-```sh
-cd TuistProjectMaker
-./package_app.sh
-open .build/TuistProjectMaker.app
 ```
